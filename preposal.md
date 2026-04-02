@@ -2,7 +2,7 @@
 
 ## What idea(s) do you have for your final project?
 
-Either a compilation of the immunoglobulin mutations 
+Gene sequence to protein sequence
 or
 a genetic visual novel in ren.py 
 

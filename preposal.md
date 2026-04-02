@@ -4,7 +4,7 @@
 
 Gene sequence to protein sequence (with using ncbi blast)
 or
-a genetic visual novel in ren.py 
+a genetic visual novel of transcription and translation (quiz) in ren.py 
 
 ## If you plan to collaborate with one or two classmates, what are their names?
 

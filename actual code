@@ -1,0 +1,255 @@
+#The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+
+
+# The game starts here.
+
+image bg cdogma_intro = "cdogma_intro.jpg"
+label start:
+    scene bg cdogma_intro
+    show white_hampster_mid at right
+    "Hello, this is a quick quiz on the central dogma of genetics."
+menu:
+    "Yes":
+        jump DNA_PARTS
+    "Yes":
+        jump DNA_PARTS
+
+image bg DNA_parts = "DNA_parts.jpg"
+label DNA_PARTS:
+    scene bg DNA_parts
+    show white_hampster_mid at right
+    "What are the three main parts of DNA?"
+    
+menu:
+    "deoxyribose, ribose, nitrogenous base":
+        jump FALSE_DNA_PARTS
+    "nitrogenous base, deoxyribose, phosphate group":
+        jump DNA_PARTS_YES
+
+image bg false = "false.jpg"
+label FALSE_DNA_PARTS:
+    scene bg false
+    show white_hampster_sad at right
+    "RIBOSE IS NOT A PART OF DNA"
+    jump DNA_PARTS
+
+image bg DNA_parts_yes = "DNA_parts_yes.jpg"
+label DNA_PARTS_YES:
+    scene bg DNA_parts_yes
+    show white_hampster_happy
+    "Yes, nitrogenous base, deoxyribose, and a phosphate group are all the three main subunits of DNA"
+    jump DNA_READ
+image bg DNA_read = "DNA_read.jpg"
+label DNA_READ: 
+    scene bg DNA_read
+    show white_hampster_mid at right
+    "What part of the DNA is read?"
+menu:
+    "deoxyribose":
+        jump FALSE_DNA_READ_1
+    "nitrogenous base":
+        jump DNA_READ_YES
+    "phosphate group":
+        jump FALSE_DNA_READ_2
+
+image bg false = "false.jpg"
+label FALSE_DNA_READ_1:
+    scene bg false
+    show white_hampster_sad at right
+    "DEOXYRIBOSE IS A SUGAR"
+    jump DNA_READ
+image bg false = "false.jpg"
+label FALSE_DNA_READ_2:
+    scene bg false
+    show white_hampster_sad at right
+    "THE PHOSPHATE GROUP ISN’T INFORMATION"
+    jump DNA_READ
+
+image bg DNA_read_yes = "DNA_read_yes.jpg"
+label DNA_READ_YES:
+    scene bg DNA_read_yes
+    show white_hampster_happy
+    "Yes, nitrogenous bases A, T, G, and C contain the information in your genes."
+    jump DNA_READ_BY_WHAT
+
+image bg DNA_read_by_what = "DNA_read_by_what.jpg"
+label DNA_READ_BY_WHAT: 
+    scene bg DNA_read_by_what
+    show white_hampster_mid at right
+    "What is DNA read by?"  
+menu:
+    "DNA Polymerase":
+        jump FALSE_DNA_READ_BY_WHAT
+    "RNA Polymerase":
+        jump DNA_READ_BY_WHAT_YES
+image bg false = "false.jpg"
+label FALSE_DNA_READ_BY_WHAT:
+    scene bg false
+    show white_hampster_sad at right
+    "THAT WOULD MAKE DNA"
+    jump DNA_READ_BY_WHAT
+image bg DNA_read_by_what_yes = "DNA_read_by_what_yes.jpg"
+label DNA_READ_BY_WHAT_YES:
+    scene bg DNA_read_by_what_yes
+    show white_hampster_happy
+    "Yes, DNA is read by RNA polymerase."
+    jump RNA_POLYMERASE_MAKE
+
+image bg RNA_polymerase_make = "RNA_polymerase_make.jpg"
+label RNA_POLYMERASE_MAKE:
+    scene bg RNA_polymerase_make
+    show white_hampster_mid at right
+    "What does RNA polymerase make after reading DNA?"
+    
+menu:
+    "DNA":
+        jump FALSE_RNA_POLYMERASE_MAKE_1
+    "RNA":
+        jump RNA_POLYMERASE_MAKE_YES
+    "Protein":
+        jump FALSE_RNA_POLYMERASE_MAKE_2
+
+image bg false = "false.jpg"
+label FALSE_RNA_POLYMERASE_MAKE_1:
+    scene bg false
+    show white_hampster_sad at right
+    "YOU JUST HAD THAT"
+    jump RNA_POLYMERASE_MAKE
+image bg false = "false.jpg"
+label FALSE_RNA_POLYMERASE_MAKE_2:
+    scene bg false
+    show white_hampster_sad at right
+    "I MEAN EVENTUALLY BUT NOT NOW"
+    jump RNA_POLYMERASE_MAKE
+
+image bg RNA_polymerase_make_yes = "RNA_polymerase_make_yes.png"
+label RNA_POLYMERASE_MAKE_YES:
+    scene bg RNA_polymerase_make_yes
+    show white_hampster_happy
+    "Yes, RNA polymerase makes RNA."
+    jump RNA_GO_WHERE
+
+image bg RNA_go_where = "RNA_go_where.jpg"
+label RNA_GO_WHERE:
+    scene bg RNA_go_where
+    show white_hampster_mid at right
+    "Where does the RNA go after exiting the nucleus into the cytoplasm through the nuclear pore?"
+    
+menu:
+    "Ribosome and RER":
+        jump RNA_GO_WHERE_YES
+    "SER":
+        jump FALSE_RNA_GO_WHERE_1
+    "To the mines":
+        jump FALSE_RNA_GO_WHERE_2
+
+image bg false = "false.jpg"
+label FALSE_RNA_GO_WHERE_1:
+    scene bg false
+    show white_hampster_sad at right
+    "YOU ARE MISSING THE FUNCTIONAL PART"
+    jump RNA_GO_WHERE
+image bg false = "false.jpg"
+label FALSE_RNA_GO_WHERE_2:
+    scene bg false
+    show white_hampster_sad at right
+    "HUMOROUS"
+    jump RNA_GO_WHERE
+image bg RNA_go_where_yes = "RNA_go_where_yes.jpg"
+label RNA_GO_WHERE_YES:
+    scene bg RNA_go_where_yes
+    show white_hampster_happy
+    "Yes, RNA binds to the ribosomes that are free floating and bound to the endoplasmic reticulum."
+    jump RIBOSOME_READ
+
+image bg ribosome_read = "ribosome_read.jpg"
+label RIBOSOME_READ:
+    scene bg ribosome_read
+    show white_hampster_mid at right
+    "In what direction does a ribosome read?"
+    
+menu:
+    "5’ to 3’":
+        jump RIBOSOME_READ_YES
+    "3’ to 5’":
+        jump FALSE_RIBOSOME_READ
+
+image bg false = "false.jpg"
+label FALSE_RIBOSOME_READ:
+    scene bg false
+    show white_hampster_sad at right
+    "Ribosomes use tRNA to bind to the anticodon or the backwards set of three, therefore they must read the RNA backwards to print it forwards"
+    jump RIBOSOME_READ
+image bg ribosome_read_yes = "ribosome_read_yes.jpg"
+label RIBOSOME_READ_YES:
+    scene bg ribosome_read_yes
+    show white_hampster_happy
+    "Yes, Ribosomes read backwards."
+    jump RIBOSOME_PARTS
+
+image bg ribosome_parts = "ribosome_parts.jpg"
+label RIBOSOME_PARTS:
+    scene bg ribosome_parts
+    show white_hampster_mid at right
+    "What are the three sites of the ribosome?"
+    
+menu:
+    "ETA":
+        jump FALSE_RIBOSOME_PARTS
+    "EPA":
+        jump RIBOSOME_PARTS_YES
+
+image bg false = "false.jpg"
+label FALSE_RIBOSOME_PARTS:
+    scene bg false
+    show white_hampster_sad at right
+    "ETA IS ESTIMATED TIME OF ARRIVAL"
+    jump RIBOSOME_PARTS
+image bg ribosome_parts_yes = "ribosome_parts_yes.jpg"
+label RIBOSOME_PARTS_YES:
+    scene bg ribosome_parts_yes
+    show white_hampster_happy
+    "Yes, A (aminoacyl, where the amino acid is), P (peptidyl, growing the peptide chain), and E (exit, tRNA leaves)."
+    jump PROTEIN
+
+image bg protein = "protein.jpg"
+label PROTEIN:
+    scene bg protein
+    show white_hampster_mid at right
+    "What does the RNA read by ribosomes make?"
+    
+menu:
+    "Proteins":
+        jump PROTEIN_YES
+    "Amines":
+        jump FALSE_PROTEIN
+
+image bg false = "false.jpg"
+label FALSE_PROTEIN:
+    scene bg false
+    show white_hampster_sad at right
+    "STUDY YOUR ORGO"
+    jump PROTEIN
+image bg protein_yes = "protein_yes.jpg"
+label PROTEIN_YES:
+    scene bg protein_yes
+    show white_hampster_happy
+    "Yes, such is the central dogma, the tRNA adds amino acids to the chain making protein."
+    jump YAY
+
+image bg yay = "yay.jpg"
+label YAY:
+    scene bg yay
+    show white_hampster_happy at right
+    "study"
+# all tabs are 4 spaces 
+# all of this done initially in google docs beacuse of this,,, it was quite the pain to unlearn
+
+
+
+
+
